@@ -1,0 +1,275 @@
+body {
+  margin: 0;
+}
+a {
+  color: rgb(255, 255, 255);
+}
+
+/* header */
+header {
+  background-color: transparent;
+  box-shadow: 1px 1px 4px 0 rgba(138, 138, 138, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid transparent;
+  text-decoration: none;
+}
+
+header li a:hover,
+header .menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.482);
+}
+
+/* menu */
+header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+header .menu-icon .navicon {
+  background: #fff;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+header .menu-icon .navicon:before,
+header .menu-icon .navicon:after {
+  background: rgb(249, 247, 247);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+header .menu-btn {
+  display: none;
+}
+
+header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+@media (min-width: 768px) {
+  header li {
+    float: left;
+  }
+
+  header li a {
+    padding: 20px 30px;
+  }
+
+  header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+
+  header .menu-icon {
+    display: none;
+  }
+}
+
+.main-section {
+  background-image: url(../img/negative-space-black-forest-dawn.jpg);
+  height: 750px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+.flex1 {
+  flex: 4;
+}
+.flex2 {
+  flex: 1;
+}
+.first-container {
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+}
+h3 {
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+  font-weight: lighter;
+}
+
+h4 {
+  font-size: 4em;
+  font-weight: bolder;
+}
+.main-second {
+  padding: 15px;
+}
+#main-second-h3 {
+  color: black;
+  font-weight: 900;
+}
+
+.flex-section {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+}
+/*ikon pil*/
+.flex-section2 {
+  text-align: center;
+}
+.flex-section2 > i {
+  color: #fff;
+}
+.info > p > i {
+  color: black;
+  font-size: 2em;
+}
+.arrow-2 {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+  text-align: center;
+}
+.arrow-2 > i {
+  color: black;
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-around;
+  align-content: center;
+  padding-bottom: 50px;
+}
+.flex-container > .laget {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1%;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  gap: 30px;
+}
+.person {
+  width: 400px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px #88888895;
+}
+
+.info {
+  background-color: rgb(213, 213, 213);
+  border-radius: 5px;
+  padding: 20px;
+}
+.laget > p {
+  color: rgb(0, 0, 0);
+  font-size: 1em;
+  font-weight: 900;
+}
+footer {
+  display: flex;
+  columns: row;
+  justify-content: space-around;
+  background-color: black;
+  height: 190px;
+  padding-top: 30px;
+}
+footer > section > p {
+  color: #fff;
+  font-size: 1.1em;
+}
+@media (max-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    height: 330px;
+    text-align: left;
+    padding-inline-start: 210px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .flex-container {
+    flex-direction: row;
+  }
+  .flex-container > .laget {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1156px) {
+  .flex-container {
+    flex-direction: row;
+  }
+  .flex-container > .laget {
+    flex-direction: column;
+  }
+}
